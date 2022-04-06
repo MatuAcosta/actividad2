@@ -1,0 +1,27 @@
+@api = http://localhost:4200/api/customers
+
+###
+GET {{api}}
+
+
+###
+GET {{api}}/4
+
+###
+POST {{api}}
+Content-Type: application/json
+
+{
+    "name":"Ale Ocampo Zoloaga"
+}
+###
+DELETE {{api}}/8
+
+
+###
+PUT {{api}}/4
+Content-Type: application/json
+
+{
+    "name":"Gonza Zoloagaa gil de mierdaa"
+}
