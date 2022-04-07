@@ -1,4 +1,4 @@
-@api = http://localhost:4200/api/customers
+@api = http://localhost:4000/api/customers
 
 ###
 GET {{api}}
