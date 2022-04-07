@@ -2,22 +2,17 @@ import {Product} from '../models/productModel'
 
 export const checkProduct = async (prodId) => { 
     let productOk = true
-    const productos = await Promise.all(prodId.map(async (el)=> { 
-        try {
-            let prod =  await Product.findOne({_id:el})
-            if (!prod) {
-                productOk = false
-                throw {message:'producto no existente'} }
-                
-            return prod
-        } 
-        catch (error) {
-            console.log(error)
+    try {
+        const productos = await Product.findOne({_id:prodId})
+        if (!productos) {
+            productOk = false
+            throw new Error()
         }
-    }))
+        console.log(productos)
+    } catch (error) {
+        
+    } finally{
+        return productOk
+    }
 
-    productos.forEach(e => {
-
-    })
-    return productOk
 }
