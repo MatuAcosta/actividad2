@@ -8,7 +8,7 @@ import customerRoute from './routes/customer.routes'
 import orderRoute from './routes/order.route'
 
 const app = express()
-const port = 4200;
+const port = 4000;
 
 app.set('pkg',pkg)
 app.use(bodyParser.urlencoded({extended:false}));
