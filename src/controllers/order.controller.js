@@ -18,15 +18,15 @@ export class OrderController {
 
     async createOrder (req,res) {
         try {
-            console.log('holaa')
-            let {prodId,customerId,total} = req.body ; 
+            let {prodId,customerId,total} = req.body; 
             prodId = (Array.from(prodId))
-            const productos = checkProduct(prodId)
-            const customer = checkCustomer(customerId)
-            if(!(productos[0]) || !(customer)) { 
+            const productos = await checkProduct(prodId)
+            const customer = await checkCustomer(customerId)
+            if(!productos || !(customer)){ 
+                console.log(productos);
                 throw {message:'El cliente o producto no existe '}
             }
-            const newOrder = new Order ({prodid:prodId,customerId:customerId,total:total})
+            const newOrder = new Order ({prodId:prodId,customerId:customerId,total:total})
             await newOrder.save();
             res.status(200).json();
         } catch (error) {
