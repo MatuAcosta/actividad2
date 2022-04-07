@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "name":"Segundo producto",
-    "price":2000
+    "price":2300
 }
 
 ###

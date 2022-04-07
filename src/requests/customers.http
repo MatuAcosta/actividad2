@@ -12,7 +12,7 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "name":"Ale Ocampo Zoloaga"
+    "name":"Ale Ocampo"
 }
 ###
 DELETE {{api}}/8

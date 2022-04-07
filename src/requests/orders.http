@@ -8,7 +8,7 @@ Content-Type: application/json
 
 
 {
-    "prodId": [1],
-    "customerId":10,
+    "prodId": [5,1],
+    "customerId":1,
     "total": 4000
 }
